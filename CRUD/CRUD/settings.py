@@ -25,7 +25,7 @@ SECRET_KEY = '^bjlai0zl4c9bx6b69-wpa4hfo(o0+!iwisqt5bk1a=y1msn-!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ '127.0.0.1' ]
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME' : 'crud',
+        'USER' : 'username',
+        'PASSWORD' : '1234',
+        'HOST' : 'localhost',
+        'PORT' : '5432'
     }
 }
 
